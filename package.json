@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "cypress_template",
   "version": "1.0.0",
   "description": "Cypress test template",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Marc-93/Cypress_template/issues"
   },
-  "homepage": "https://github.com/Marc-93/Cypress_template#readme"
+  "homepage": "https://github.com/Marc-93/Cypress_template#readme",
+  "devDependencies": {
+    "cypress": "^12.2.0"
+  }
 }
