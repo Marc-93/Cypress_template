@@ -10,9 +10,10 @@ const add_to_cart = '.product-action button'
 
 
 
-  describe('Test suite', ()=> 
+  describe('Test suite 1', ()=> 
   {
-    it('test case', ()=>
+    // TEST 1
+    it('test 1: clicking products', ()=>
     {
         // Opens the url
         cy.visit(web_url)
@@ -24,7 +25,9 @@ const add_to_cart = '.product-action button'
         cy.get(product_list).find(product).should('have.length.at.least',1)
         
         // Gets the product list, selects the first item and clicks into add cart action
-        cy.get(product).eq(0).find(add_to_cart).click()
+        cy.get(product).eq(0).find(add_to_cart).click().then(()=>{
+          console.log("button clicked")
+        })
 
         // same but using text to have an example
         // using contains cy.get(product).eq(1).contains('ADD TO CART').click()
@@ -41,5 +44,30 @@ const add_to_cart = '.product-action button'
             cy.wrap(element).find(add_to_cart).click()
           }
         })
+    })
+
+    // TEST 2
+    it('test 2: checking text', ()=>
+    {
+      // Opens the url
+      cy.visit(web_url)
+      cy.get('.brand').as('logoLocator')
+      cy.get('@logoLocator').then((logoElement)=>{
+        cy.log(logoElement.text())
+      })
+
+      // method 1 to check a text to be equal
+      cy.get('@logoLocator').should(($div) => {
+        let text = $div.text().toLowerCase();
+        let expectedText = 'greenkart';
+        expect(text).to.be.equal(expectedText);
+      });
+
+      // method 2 to check a text to be equal
+      cy.get('@logoLocator').then(($element) => {
+        expect($element.text().toLowerCase()).to.equal('greenkart')
+      })
+      // it is async, so will be printed at the begining of the execution
+      console.log("test 2")
     })
   })
