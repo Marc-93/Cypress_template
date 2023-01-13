@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/Marc-93/Cypress_template#readme",
   "devDependencies": {
-    "cypress": "^12.3.0"
+    "cypress": "^12.3.0",
+    "cypress-iframe": "^1.0.1"
   },
   "dependencies": {
     "package.json": "^2.0.1"
