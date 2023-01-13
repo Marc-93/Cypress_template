@@ -13,4 +13,14 @@ describe('Test suite 7', ()=>
     cy.url().should('include', 'academy')
     cy.go('back')
 })
+
+  it('test 2: check url', ()=>
+{
+    // Opens the url
+    cy.visit(web_url)
+    cy.get(new_tab).then((element)=>{
+      const url = element.prop('href')
+      expect(url).to.include('rahulshettyacademy')
+    })
+  })
 })
