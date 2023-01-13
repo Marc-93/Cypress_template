@@ -7,7 +7,7 @@ const dropdown_values = ['option1', 'option2', 'option3']
 const dropdown_dynamic = '#autocomplete'
 
 
-  describe('Test suite 3', ()=>
+  describe('Test suite 4', ()=>
   {
       it('test 1: Static dropdown', ()=>
     {

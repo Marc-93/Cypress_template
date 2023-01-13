@@ -4,7 +4,7 @@ const web_url = 'https://rahulshettyacademy.com/AutomationPractice/#/'
 const alert_button = '#alertbtn'
 const alert_confirm = "[value='Confirm']"
 
-describe('Test suite 5', ()=>
+describe('Test suite 6', ()=>
 {
   it('test 1: Alerts and confirm windows', ()=>
 {
