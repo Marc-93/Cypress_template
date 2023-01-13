@@ -3,9 +3,9 @@
 const web_url = 'https://rahulshettyacademy.com/AutomationPractice/#/'
 const new_tab = '#opentab'
 
-describe('Test suite 5', ()=>
+describe('Test suite 7', ()=>
 {
-  it('test 7: Navigation functions', ()=>
+  it('test 1: Navigation functions', ()=>
 {
     // Opens the url
     cy.visit(web_url)

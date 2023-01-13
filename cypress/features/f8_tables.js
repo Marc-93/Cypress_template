@@ -4,9 +4,9 @@ const web_url = 'https://rahulshettyacademy.com/AutomationPractice/#/'
 const table = "table[class='table-display']"
 const second_column = "tr td:nth-child(2)"
 
-describe('Test suite 5', ()=>
+describe('Test suite 8', ()=>
 {
-  it('test 8: tables', ()=>
+  it('test 1: tables', ()=>
 {
     // Opens the url
     cy.visit(web_url)
