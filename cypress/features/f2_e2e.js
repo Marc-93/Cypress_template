@@ -12,11 +12,13 @@ const add_to_cart = '.product-action button'
 
   describe('Test suite 2', ()=> 
   {
-    it('test 1: Proceed to buy an element', ()=>
-    {
-       // Opens the url
+    beforeEach(()=>{
+      // Opens the url
       cy.visit(web_url)
-        
+    })
+    
+    it('test 1: Proceed to buy an element', ()=>
+    {   
        // Gets the id of search bar and types cu in search bar
       cy.get(search_bar).type("Brocolli")
 

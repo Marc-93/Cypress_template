@@ -6,10 +6,13 @@ const second_column = "tr td:nth-child(2)"
 
 describe('Test suite 8', ()=>
 {
+    beforeEach(()=>{
+        // Opens the url
+        cy.visit(web_url)
+      })
+
   it('test 1: tables', ()=>
 {
-    // Opens the url
-    cy.visit(web_url)
     cy.get(table).should('be.visible')
     cy.get(`${table} ${second_column}`).each(($element, index, $list) => {
         const current_text = $element.text().toLowerCase()

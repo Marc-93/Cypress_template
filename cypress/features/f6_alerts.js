@@ -6,10 +6,13 @@ const alert_confirm = "[value='Confirm']"
 
 describe('Test suite 6', ()=>
 {
+    beforeEach(()=>{
+        // Opens the url
+        cy.visit(web_url)
+      })
+
   it('test 1: Alerts and confirm windows', ()=>
 {
-    // Opens the url
-    cy.visit(web_url)
     cy.get(alert_button).click()
     cy.get(alert_confirm).click()
 
@@ -22,7 +25,7 @@ describe('Test suite 6', ()=>
     // get the text from alert, firing the alert directly to browser:
     cy.on('window:confirm', (str)=>{
         //assert the text obtained from alert matches with the expected using mocha
-        expect(str).to.equal('Hello , are you sure you want to confirm?')
+        expect(str).to.equal('Hello , Are you sure you want to confirm?')
     })
 })
 })

@@ -7,10 +7,13 @@ const visibility_element = "#displayed-text"
 
 describe('Test suite 5', ()=>
 {
-  it('test 1: Invisible', ()=>
-{
+  beforeEach(()=>{
     // Opens the url
     cy.visit(web_url)
+  })
+
+  it('test 1: Invisible', ()=>
+{
     cy.get(show_element).click()
     cy.get(visibility_element).should('be.visible')
 

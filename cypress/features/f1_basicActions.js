@@ -12,12 +12,13 @@ const add_to_cart = '.product-action button'
 
   describe('Test suite 1', ()=> 
   {
+    beforeEach(()=>{
+      // Opens the url
+      cy.visit(web_url)
+    })
     // TEST 1
     it('test 1: clicking products', ()=>
     {
-        // Opens the url
-        cy.visit(web_url)
-        
         // Gets the id of search bar and types cu in search bar
         cy.get(search_bar).type("cu")
 
@@ -49,8 +50,6 @@ const add_to_cart = '.product-action button'
     // TEST 2
     it('test 2: checking text', ()=>
     {
-      // Opens the url
-      cy.visit(web_url)
       cy.get('.brand').as('logoLocator')
       cy.get('@logoLocator').then((logoElement)=>{
         cy.log(logoElement.text())
