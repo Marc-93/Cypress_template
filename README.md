@@ -8,7 +8,7 @@ Features are typed using Gherkin due it is designed to facilitate the understand
 
 * Browsers previously installed (chrome, firefox)
 * npm
-* Install package.json dependencies
+* Install package.json dependencies: `npm install`
 
 
 ## Technical details:

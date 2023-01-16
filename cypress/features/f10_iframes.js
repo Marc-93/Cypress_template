@@ -8,10 +8,13 @@ const iframe_object = '#hide-textbox'
 
 describe('Test suite 10', ()=>
 {
-  it('test 1: iframes', ()=>
-{
+  beforeEach(()=>{
     // Opens the url
     cy.visit(web_url)
+  })
+
+  it('test 1: iframes', ()=>
+{
     cy.frameLoaded('#courses-iframe')
     cy.iframe().find("a[href='mentorship']").eq(0).click()
 })
