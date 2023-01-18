@@ -28,3 +28,17 @@
 Cypress.Commands.add('test', (text) => { 
     cy.log(text)
  })
+
+ Cypress.Commands.add('selectProduct', (productName)=>{
+    //const search_bar = '.search-keyword'
+    const product_list =  '.products'
+    const product = '.product:visible'
+    const add_to_cart = '.product-action button'
+
+    //cy.get(search_bar).type(productName)
+    cy.get(product_list).find(product).each(($element, index, $listOfElements) => {
+        if($element.text().includes(productName)){
+            cy.get(product_list).find(product).eq(index).find(add_to_cart).click()
+        }
+        })
+    })

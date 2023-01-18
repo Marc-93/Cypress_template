@@ -13,6 +13,10 @@ const add_to_cart = '.product-action button'
   describe('Test suite 2', ()=> 
   {
     beforeEach(()=>{
+      cy.fixture('products').then((productName) => {
+        // "this" is still the test context object
+        globalThis.productName = productName
+      })
       // Opens the url
       cy.visit(web_url)
     })
@@ -33,6 +37,11 @@ const add_to_cart = '.product-action button'
         cy.contains('place order', {matchCase: false}).click()
 
       })
+    })
 
+    it('test 2: product name selection with custom commands', ()=>{
+      globalThis.productName.productName.forEach((element)=>{
+        cy.selectProduct(element)
+      })
     })
   })
